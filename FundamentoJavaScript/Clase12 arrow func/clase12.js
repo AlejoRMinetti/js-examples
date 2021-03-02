@@ -1,0 +1,103 @@
+var jesus = {
+    nombre: 'Jesus',
+    apellido: 'Castellanos',
+    edad: 29,
+    ingeniero: true,
+    cocinero: false,
+    cantante: false,
+    dj: false,
+    guitarrista: false,
+    drone: false
+};
+
+var milena = {
+    nombre: 'Milena',
+    apellido: 'Martinez',
+    edad: 17,
+    ingeniero: true,
+    cocinero: false,
+    cantante: false,
+    dj: false,
+    guitarrista: false,
+    drone: true
+};
+
+function imprimirProfesiones(persona) {
+    console.log(`${persona.nombre}`);
+    if (persona.ingeniero === true) {
+        console.log(`Es:Ingeniero `);
+    } else {
+        console.log(`no es Ingeniero`);
+    }
+
+    if (persona.cocinero === true) {
+        console.log(`Es: cocinero `);
+    } else {
+        console.log(`no es cocinero`);
+    }
+
+    if (persona.cantante === true) {
+        console.log(`Es: cantante `);
+    } else {
+        console.log(`no es cantante`);
+    }
+
+    if (persona.dj === true) {
+        console.log(`Es: dj `);
+    } else {
+        console.log(`no es dj`);
+    }
+
+    if (persona.guitarrista === true) {
+        console.log(`Es: guitarrista `);
+    } else {
+        console.log(`no es guitarrista `);
+    }
+
+    if (persona.dron === true) {
+        console.log(`Vuela dron`);
+    } else {
+        console.log(`No vuela dron`);
+    }
+}
+
+imprimirProfesiones(milena)
+
+const MAYORIA_DE_EDAD = 18;
+
+// primer arrow function, se usa const como puntero a la funcion
+/*const esMayorDeEdad = persona => {
+    return persona.edad >= MAYORIA_DE_EDAD;
+}*/
+
+//const esMayorDeEdad = persona => persona.edad >= MAYORIA_DE_EDAD; //forma compacta
+
+const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD // desestructurado
+
+function imprimirSiEsMayorDeEdad(persona) {
+    if (esMayorDeEdad(persona)) {
+        console.log(`${persona.nombre} es mayor de edad`)
+    } else {
+        console.log(`${persona.nombre} es menor de edad`)
+    }
+}
+
+imprimirSiEsMayorDeEdad(jesus)
+
+/*function permitirAcceso(persona){
+    if(!esMayorDeEdad(persona)){
+        console.log('ACCESO DENEGADO');
+    }
+}*/
+
+
+const permitirAcceso = persona => {
+    if (!esMayorDeEdad(persona)) {
+        console.log(`puede pasar ${persona.nombre}? ACCESO DENEGADO`);
+    } else
+        console.log(`puede pasar ${persona.nombre}? ACCESO PERMITIDO`);
+}
+
+permitirAcceso(milena)
+permitirAcceso(jesus)
+    //const permitirAcceso = persona => !esMayorDeEdad(persona);
