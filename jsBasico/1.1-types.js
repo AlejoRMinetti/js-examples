@@ -18,3 +18,7 @@ typeof null
 typeof {}
 typeof []
 
+// conversion de datos
+
+// int to string. base=10 decimal. base = 2 binario
+number.toString(base)
