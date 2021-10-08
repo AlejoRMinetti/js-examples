@@ -11,11 +11,24 @@
     <p>Rocky 99 - Coming soon</p>
 
     <script>
-
+        
+        var changed = false;
         function changeColor() {
-            var el = document.querySelector("p");
-            el.style.color = "#d7465f";
-            el.style.backgroundColor = "#000000"; // for background-color atribute
+            if (changed === false) {
+                changed = true;
+                var el = document.querySelector("p");
+                el.style.color = "#d7465f";
+                el.style.backgroundColor = "#000000"; // for background-color atribute
+                var bt = document.querySelector("button");
+                bt.style.borderRadius = "45px";
+            }else{
+                changed = false;
+                var el = document.querySelector("p");
+                el.style.color = "#000000";
+                el.style.backgroundColor = "#ffffff"; // for background-color atribute
+                var bt = document.querySelector("button");
+                bt.style.borderRadius = "1px";
+            }
         }
 
     </script>
