@@ -1,6 +1,7 @@
 // Un objeto es una colección de propiedades, y una propiedad es una asociación de key (nombre, o clave) y valores.
 
 var objecto = {}; // Object Literal Syntax 
+const person = new Object();
 
 var miAuto = {
     marca: "Toyota",  // key - value 
@@ -11,11 +12,15 @@ var miAuto = {
   }
 };
 
+miAuto["marca"]
 miAuto.annio 
-miAuto.modelo 
+miAuto.modelo
+
+// agregar propiedad:
+miAuto.rayones = 3;
 
 miAuto.detallesDelAuto(); 
-
+miAuto["detallesDelAuto"]();
 
 // Función constructora 
 
@@ -25,5 +30,10 @@ function auto(marca, modelo, annio) {  // Creas una función con los parametros 
     this.annio = annio;
 }
 
-var newAuto = new auto("Tesla", "Model 3", 2020);
+var newAuto = new auto("Tesla", "Model 3", 2021);
+
+
+///////////// Metodos
+// https://www.w3schools.com/js/js_object_methods.asp
+
 
