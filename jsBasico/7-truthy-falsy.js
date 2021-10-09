@@ -22,7 +22,6 @@ function a(){}
 más 
 
 // Para que podemos utilizar esto, para generar condiciones segun el valor que demos. 
-
 if(InputEvent.value) {
-    ...
+    
 }

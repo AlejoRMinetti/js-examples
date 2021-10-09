@@ -42,9 +42,20 @@ function findMax() {
   return max;
 }
 
-// recorrer array de nxm
-for (let fila = 0; fila < array.length; fila++) {
-  for (let colum = 0; colum < array[0].length; colum++) {
-    array[fila][colum] += 1;
-  }
+///// usando callback
+
+function decirHolaAlUsuario(usuario) {
+  return 'Hola ' + usuario + '!';
 }
+
+function decirAdiosAlUsuario(usuario) {
+  return 'Adiós ' + usuario + '!';
+}
+
+function crearSaludo(usuario, cb) {
+  return cb(usuario);
+}
+
+crearSaludo('Dan', decirHolaAlUsuario); // 'Hello Dan!'
+crearSaludo('Dan', decirAdiosAlUsuario); // 'Goodbye Dan!'
+

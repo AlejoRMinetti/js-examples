@@ -16,7 +16,7 @@ console.log(frutas[0]); // Los arrays iician en "0"
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 document.getElementById("demo").innerHTML = fruits.toString();
 
-// loop en array multidimencional (snippet: marrLoop)
+// loop en array de 2 niveles (snippet: marrLoop)
 for (let fila = 0; fila < array.length; fila++) {
   if (array[fila].length) {
     for (let colum = 0; colum < array[0].length; colum++) {
@@ -26,3 +26,4 @@ for (let fila = 0; fila < array.length; fila++) {
     array[fila] += 1;
   }
 }
+
