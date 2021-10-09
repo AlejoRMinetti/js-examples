@@ -32,8 +32,11 @@ object.hasOwnProperty('myProp')
 
 
 // Función constructora 
+// delete atributo o metodo
+delete miAuto["rayones"];
 
-function auto(marca, modelo, annio) {  // Creas una función con los parametros que va a recibir, 
+// Función constructora 
+function Auto(marca, modelo, annio) {  // Creas una función con los parametros que va a recibir, 
     this.marca = marca;   // Utilizamos el "this" para asignar valores a las propiedades del objeto 
     this.modelo = modelo;
     this.annio = annio || 1990; //si no se define annio, va por defecto 1990 (default operator)
@@ -43,9 +46,22 @@ function auto(marca, modelo, annio) {  // Creas una función con los parametros 
 //creacion de metodo prototipo (no se ve en el objeto pero se puede usar)
 
 
-var newAuto = new auto("Tesla", "Model 3", 2021);
+// Prototipo: agrega metodo o atributos no visibles en la clase, que seran ejecutados si
+// no se encuentran previamente en la definicion del objeto
+Auto.prototype.arrancar = function(){
+  return "Roon! roon!"
+}
 
+var newAuto = new Auto("Tesla", "Model 3", 2021);
 
+// Clase ES6
+class UserInfo {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+const newUser = new UserInfo("Mehdi", 19);
 ///////////// Metodos
 // https://www.w3schools.com/js/js_object_methods.asp
 
