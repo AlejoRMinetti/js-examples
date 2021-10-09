@@ -8,21 +8,23 @@ var articulos = [
     { nombre: 'audifonos', costo: 1700 }
 ]
 
-// Metodos para recorrer arrays 
+// Metodos para recorrer arrays
+// en JS-VI (Henry) hay implementaciones mediante callbacks 
 
-//   Metodo forEach
+//   Metodo forEach: recorre sin dar un return
 articulos.forEach(function (articulo) {
     console.log(articulo.nombre);
 });
 
 //   Metodo Map: devuelve un array transformado a partir del array de entrada
-var nombreArticulos = articulos.map(function (articulo) {
-    return articulo.nombre
+const doble = numeros.map(function(elemento) {
+    return elemento * 2;
 });
-console.log(nombreArticulos);
+console.log(doble);
 
-//   Metodo Reduce
-/* Este método corre una función en cada elemento del array, para comenzar a sumar los costos de cada elemento. */
+//   Metodo Reduce: devuelve un unico elemento (int, string)
+/* Este método corre una función en cada elemento del array, 
+para comenzar a sumar los costos de cada elemento. */
 var costoTotal = articulos.reduce(function (totalActual, articulo) {
     return articulo.costo + totalActual;
 }, 0); // El 0 será la cantidad inicial con la que comenzará el totalActual
