@@ -76,3 +76,31 @@ objectoAusente && objectoAusente.marca
 miAuto.__proto__
 
 // los objetos buscan los metodos o atributos primero en el objeto y luego en los proto
+
+//////////////// Loops para objetos
+
+// https://www.delftstack.com/howto/javascript/loop-through-object-javascript/#:~:text=for-in%20Loop%20to%20Loop%20Through%20JavaScript%20Object%20The,loop%20through%20the%20JavaScript%20object%20is%20as%20follows.
+var Cities = {City1:"Tokyo",City2:"Paris",City3:"Dubai",City3:"Rome",City4:"London"}
+
+// for-in
+for(var city in Cities)
+{
+    console.log(city,": ",Cities[city]);
+}
+
+//for-of
+for(var city of Object.getOwnPropertyNames(Cities))
+{
+    const CityName = Cities[city];
+    console.log(city,":",CityName);
+}
+
+// for-of alternative
+for(var [city,CityName] of Object.entries(Cities))
+{
+    console.log(city,":",CityName);
+}
+// ver mas alnativas en link
+
+// forEach object
+Object.keys.forEach(city => {console.log(city,":",Cities[city])})

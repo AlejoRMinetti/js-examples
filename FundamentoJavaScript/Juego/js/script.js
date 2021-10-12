@@ -7,7 +7,7 @@ const btnEmpezar = document.getElementById('btnEmpezar');
 // numero
 const segs = document.getElementById("number");
 const nivel = document.getElementById("Level");
-const MAX_NIVEL = 3;
+const MAX_NIVEL = 10;
 var times;
 class Juego {
     constructor() {
