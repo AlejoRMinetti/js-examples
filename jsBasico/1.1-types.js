@@ -30,22 +30,3 @@ Number("23")
 // int to string. base=10 decimal. base = 2 binario
 number.toString(base)
 
-//////////// String Methods
-
-str = 'AppDividend';
-console.log('Original String: ', str); //Original String:  AppDividend
-
-// replace
-newStr = str.replace(/D/g, '');
-console.log('After character removed: ', newStr); 
-//After character removed:  Appividend
-
-// slice
-removeFirstChar = str.slice(1);
-console.log('Removing the first character', removeFirstChar); // ppDividend
-removeLastChar = str.slice(0, str.length - 1);
-console.log('Removing the last character: ', removeLastChar); // AppDividen
-
-// substr
-newStr = str.substr(1, str.length);
-console.log('After removing the first character:', newStr); // ppDividend
