@@ -34,7 +34,7 @@ console.group("Triángulos");
 // console.log("La altura del triángulo es de: " + alturaTriangulo + "cm");
 
 function perimetroTriangulo(lado1, lado2, base) {
-  return lado1 + lado2 + base;
+  return Number(lado1) + Number(lado2) + Number(base);
 }
 // console.log("El perímetro del triángulo es: " + perimetroTriangulo + "cm");
 
@@ -69,24 +69,62 @@ function perimetroCirculo(radio) {
 
 // Área
 function areaCirculo(radio) {
-  return (radio * radio) * PI;
+  return radio * radio * PI;
 }
 
 console.groupEnd();
 
-
 // Aquí interactuamos con el HTML
 function calcularPerimetroCuadrado() {
-  const input = document.getElementById("InputCuadrado");
-  const value = input.value;
+  let input = document.getElementById("InputCuadrado");
+  let value = input.value;
 
-  const perimetro = perimetroCuadrado(value);
+  let perimetro = perimetroCuadrado(value);
   alert(perimetro);
 }
 function calcularAreaCuadrado() {
-  const input = document.getElementById("InputCuadrado");
-  const value = input.value;
+  let input = document.getElementById("InputCuadrado");
+  let value = input.value;
 
-  const area = areaCuadrado(value);
+  let area = areaCuadrado(value);
+  alert(area);
+}
+
+// Para el circulo
+function calcularPerimetroCirculo() {
+  let input = document.getElementById("InputCirculo");
+  let radio = input.value;
+
+  let perimetro = perimetroCirculo(radio);
+  alert(perimetro);
+}
+function calcularAreaCirculo() {
+  let input = document.getElementById("InputCirculo");
+  let radio = input.value;
+
+  let area = areaCirculo(radio);
+  alert(area);
+}
+
+// Para el triangulo
+function calcularPerimetroTriangulo() {
+  let inputLado1 = document.getElementById("InputTrianguloLado1");
+  let lado1 = inputLado1.value;
+  let inputLado2 = document.getElementById("InputTrianguloLado2");
+  let lado2 = inputLado2.value;
+  let inputBase = document.getElementById("InputTrianguloBase");
+  let base = inputBase.value;
+
+  let perimetro = perimetroTriangulo(lado1, lado2, base);
+  alert(perimetro);
+}
+
+function calcularAreaTriangulo() {
+  let inputAltura = document.getElementById("InputTrianguloAltura");
+  let altura = inputAltura.value;
+  let inputBase = document.getElementById("InputTrianguloBase");
+  let base = inputBase.value;
+
+  let area = areaTriangulo(base, altura);
   alert(area);
 }
