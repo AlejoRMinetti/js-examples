@@ -108,22 +108,22 @@ function calcularAreaCirculo() {
 
 // Para el triangulo
 function calcularPerimetroTriangulo() {
-  let inputLado1 = document.getElementById("InputTrianguloLado1");
-  let lado1 = inputLado1.value;
-  let inputLado2 = document.getElementById("InputTrianguloLado2");
-  let lado2 = inputLado2.value;
+  let inputLado = document.getElementById("InputTrianguloLado");
+  let lado = inputLado.value;
   let inputBase = document.getElementById("InputTrianguloBase");
   let base = inputBase.value;
 
-  let perimetro = perimetroTriangulo(lado1, lado2, base);
+  let perimetro = perimetroTriangulo(lado, lado, base);
   alert(perimetro);
 }
 
 function calcularAreaTriangulo() {
-  let inputAltura = document.getElementById("InputTrianguloAltura");
-  let altura = inputAltura.value;
+  let inputLado = document.getElementById("InputTrianguloLado");
+  let lado = inputLado.value;
   let inputBase = document.getElementById("InputTrianguloBase");
   let base = inputBase.value;
+
+  let altura = Math.sqrt(lado*lado - base*base);
 
   let area = areaTriangulo(base, altura);
   alert(area);
