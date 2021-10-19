@@ -24,11 +24,15 @@ lista1.map(
   }
 );
 
+// entries convierte al array en un array de arrays [Key, value]
 const lista1Array = Object.entries(lista1Count).sort(
-  function (elementoA, elementoB) {
+  // sort cuando la func devuelve positivo, mueve hacia adelante el elementoA
+  function (elementoA, elementoB) { 
     return elementoA[1] - elementoB[1];
+    // mueve hacia el final el elemento mayor, segun su 2do valor del subarray
   }
 );
 
 const moda = lista1Array[lista1Array.length - 1];
+// La media va a ser el ultimo elemento dado por el ordenamiento efectuado
 
