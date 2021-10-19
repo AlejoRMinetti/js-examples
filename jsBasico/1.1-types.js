@@ -24,6 +24,8 @@ typeof "hola"
 // conversion de datos (coercion)
 String(10)
 Number("23")
+parseInt("12.20")
+parseFloat("12")
 // al hacer operaciones puede suceder coercion implicita: 4 + "7" -> "47" o 2 * "3" -> 6
 // si lo forzamos mediante conversion con estos metodos: es explicita
 
