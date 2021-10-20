@@ -1,6 +1,6 @@
 //////////// String Methods
 
-str = 'AppDividend';
+var str = 'AppDividend';
 console.log('Original String: ', str); //Original String:  AppDividend
 
 // replace
@@ -21,12 +21,14 @@ str.replace(/blue|house|car/gi, function (x) {
 // Mr BLUE has a BLUE HOUSE and a BLUE CAR.
 
 // slice
+var str = 'AppDividend';
 removeFirstChar = str.slice(1);
 console.log('Removing the first character', removeFirstChar); // ppDividend
 removeLastChar = str.slice(0, str.length - 1);
 console.log('Removing the last character: ', removeLastChar); // AppDividen
 
 // substr
+var str = 'AppDividend';
 newStr = str.substr(1, str.length);
 console.log('After removing the first character:', newStr); // ppDividend
 
