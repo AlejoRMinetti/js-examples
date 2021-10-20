@@ -104,7 +104,6 @@ delete fruits[0]; // Changes the first element in fruits to undefined
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.splice(2, 0, "Lemon", "Kiwi"); // ["Banana", "Orange", "Lemon", "Kiwi", "Apple", "Mango"]
 var banana = fruits.splice(0, 1); // Removes the first element from fruits and return it
-
 ///// for New arrays
 
 //concat
