@@ -103,7 +103,7 @@ delete fruits[0]; // Changes the first element in fruits to undefined
 // The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.splice(2, 0, "Lemon", "Kiwi"); // ["Banana", "Orange", "Lemon", "Kiwi", "Apple", "Mango"]
-fruits.splice(0, 1); // Removes the first element
+var banana = fruits.splice(0, 1); // Removes the first element from fruits and return it
 
 ///// for New arrays
 
