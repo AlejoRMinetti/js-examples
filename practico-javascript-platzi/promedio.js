@@ -15,3 +15,11 @@ function calcularMediaAritmetica(lista) {
 
   return promedioLista;
 }
+
+function promedioPonderado(valores, pesos) {
+  var sumaPonderada = 0;
+  for (let i = 0; i < valores.length; i++) {
+        sumaPonderada += valores[i]*pesos[i];
+  }
+  return sumaPonderada / valores.length
+}
