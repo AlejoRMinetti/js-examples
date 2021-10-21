@@ -1,4 +1,4 @@
-// definir valores por defecto
+////// definir valores por defecto
 function newFunction(name, age, country) {
   var name = name || "oscar";
   var age = age || 32;
@@ -12,7 +12,7 @@ function newFunction2(name = "oscar", age = 32, country = "MX") {
 newFunction2();
 newFunction2("Ricardo", "23", "CO");
 
-// concatenacion
+/////// concatenacion
 let hello = "Hello";
 let world = "World";
 let epicPhrase = hello + " " + world;
@@ -20,7 +20,7 @@ console.log(epicPhrase);
 let epicPhrase2 = `${hello} ${world}`;
 console.log(epicPhrase2);
 
-// multilineas
+//////// multilineas
 let lorem =
   "Qui consequatur. Commodi. Ipsum vel duis yet minima \n" +
   "otra frase epica que necesitamos.";
@@ -31,7 +31,7 @@ let lorem2 = `otra frase epica que necesitamos
 console.log(lorem);
 console.log(lorem2);
 
-// desestructuracion de elementos
+//////// desestructuracion de elementos
 let person = {
   name: "oscar",
   age: 32,
@@ -42,13 +42,14 @@ console.log(person.name, person.age);
 let { name, age, country } = person;
 console.log(name, age, country);
 
+///// propagacion
 let team1 = ["Oscar", "Julian", "Ricardo"];
 let team2 = ["Valeria", "Yesica", "Camila"];
 //es6 operador de propagacion
 let education = ["David", ...team1, ...team2];
 console.log(education);
 
-//es5 solo existia var
+///// antes solo existia var
 {
   var globalVar = "Global Var";
 }
@@ -63,7 +64,7 @@ const a = "b";
 a = "a";
 console.log(a);
 
-// declaracion de objetos
+////// declaracion de objetos
 let name = 'oscar';
 let age = 32;
 //es5
@@ -72,8 +73,7 @@ obj = { name: name, age: age };
 obj2 = { name, age };
 console.log(obj2);
 
-
-// arrow functions
+////// arrow functions
 const names = [
   { name: 'Oscar', age: 32 },
   { name: 'Yesica', age: 27 }
@@ -94,6 +94,7 @@ const listOfNames4 = name => {
 // arrow function compacta, con unica linea con return implicito
 const square = num => num * num;
 
+///////// promesas
 const helloPromise = () => {
   return new Promise((resolve, reject) => {
     if (false) {
@@ -103,7 +104,6 @@ const helloPromise = () => {
     }
   });
 }
-
 helloPromise()
   .then(response => console.log(response))
   .catch(error => console.log(error));
