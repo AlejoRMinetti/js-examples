@@ -23,7 +23,7 @@ const obj = {
   name: 'oscar',
 }
 
-///////////// usando promise en asyn await
+///////////// usando promise en async await
 const helloWorld = () => {
   return new Promise((resolve, reject) => {
     (true)
