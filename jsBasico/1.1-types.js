@@ -7,16 +7,15 @@ Object
 Symbol
 
 // typeof es un tipo de operador unitario "Unary operator" que trabaja con 1 operando (variable)
-
 var nombre; 
-
-typeof 30 
-typeof true
-typeof "Diego" 
-typeof nombre 
-typeof null
-typeof {}
-typeof []
+console.log(typeof 30) //"number"
+console.log(typeof true) //"boolean"
+console.log(typeof "Diego") //"string"
+console.log(typeof nombre) //"undefined"
+console.log(typeof null) // "object"
+console.log(typeof {}) // "object"
+console.log(typeof []) // "object"
+ 
 
 //ver tipo de dato:
 typeof "hola"
