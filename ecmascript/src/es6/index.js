@@ -5,16 +5,15 @@ function newFunction(name, age, country) {
   var country = country || "MX";
   console.log(name, age, country);
 }
-<<<<<<< HEAD
+
+
 /////// es6 desde asginacion de los parametros
-=======
-// es6 desde asginacion de los parametros
->>>>>>> d968431a819e44129cb1ae9bd92c5cbc56e0b95d
 function newFunction2(name = "oscar", age = 32, country = "MX") {
   console.log(name, age, country);
 }
 newFunction2();
 newFunction2("Ricardo", "23", "CO");
+
 
 /////// concatenacion
 let hello = "Hello";
@@ -24,11 +23,8 @@ console.log(epicPhrase);
 let epicPhrase2 = `${hello} ${world}`;
 console.log(epicPhrase2);
 
-<<<<<<< HEAD
+
 /////// multilineas
-=======
-//////// multilineas
->>>>>>> d968431a819e44129cb1ae9bd92c5cbc56e0b95d
 let lorem =
   "Qui consequatur. Commodi. Ipsum vel duis yet minima \n" +
   "otra frase epica que necesitamos.";
@@ -39,11 +35,8 @@ let lorem2 = `otra frase epica que necesitamos
 console.log(lorem);
 console.log(lorem2);
 
-<<<<<<< HEAD
+
 /////// desestructuracion de elementos
-=======
-//////// desestructuracion de elementos
->>>>>>> d968431a819e44129cb1ae9bd92c5cbc56e0b95d
 let person = {
   name: "oscar",
   age: 32,
@@ -54,6 +47,7 @@ console.log(person.name, person.age);
 let { name, age, country } = person;
 console.log(name, age, country);
 
+
 ///// propagacion
 let team1 = ["Oscar", "Julian", "Ricardo"];
 let team2 = ["Valeria", "Yesica", "Camila"];
@@ -61,11 +55,8 @@ let team2 = ["Valeria", "Yesica", "Camila"];
 let education = ["David", ...team1, ...team2];
 console.log(education);
 
-<<<<<<< HEAD
+
 /////////// antes solo existia var
-=======
-///// antes solo existia var
->>>>>>> d968431a819e44129cb1ae9bd92c5cbc56e0b95d
 {
   var globalVar = "Global Var";
 }
@@ -80,13 +71,9 @@ const a = "b";
 a = "a";
 console.log(a);
 
-<<<<<<< HEAD
+
 ////////// declaracion de objetos
 let name = "oscar";
-=======
-////// declaracion de objetos
-let name = 'oscar';
->>>>>>> d968431a819e44129cb1ae9bd92c5cbc56e0b95d
 let age = 32;
 //es5
 obj = { name: name, age: age };
@@ -94,7 +81,7 @@ obj = { name: name, age: age };
 obj2 = { name, age };
 console.log(obj2);
 
-<<<<<<< HEAD
+
 ///////// arrow functions
 const names = [
   { name: "Oscar", age: 32 },
@@ -116,6 +103,7 @@ const listOfNames4 = (name) => {
 // arrow function compacta, con unica linea con return implicito
 const square = (num) => num * num;
 
+
 //// promesas
 const helloPromise = () => {
   return new Promise((resolve, reject) => {
@@ -131,44 +119,8 @@ helloPromise()
   .then((response) => console.log(response))
   .catch((error) => console.log(error));
 
+
 /////////// clases
-=======
-////// arrow functions
-const names = [
-  { name: 'Oscar', age: 32 },
-  { name: 'Yesica', age: 27 }
-]
-// funcion anonima
-let listOfNames = names.map(function (item) {
-  console.log(item.name);
-})
-// arrow function multiples parametros
-let listOfNames2 = names.map(item => console.log(item.name));
-const listOfNames3 = (name, age, country) => {
-  console.log(name, age, country);
-}
-// arrow function unico parametro
-const listOfNames4 = name => {
-  console.log(name);
-}
-// arrow function compacta, con unica linea con return implicito
-const square = num => num * num;
-
-///////// promesas
-const helloPromise = () => {
-  return new Promise((resolve, reject) => {
-    if (false) {
-      resolve('Hey!');
-    } else {
-      reject('Ups!!');
-    }
-  });
-}
-helloPromise()
-  .then(response => console.log(response))
-  .catch(error => console.log(error));
-
->>>>>>> d968431a819e44129cb1ae9bd92c5cbc56e0b95d
 class calculator {
   constructor() {
     this.valueA = 0;
@@ -180,22 +132,23 @@ class calculator {
     return this.valueA + this.valueB;
   }
 }
-<<<<<<< HEAD
 const calc = new calculator();
 console.log(calc.sum(2, 2));
+
 
 ///// importar modulo
 const lib =  require('./module');
 lib.hello();
 lib.bye();
-//es6 (no me anda :( )
+// es6 (no me anda con Run Code extension :( )
 import { hello } from './module';
 hello();
 // importar con otro nombre
 import myHello from './module'
 console.log(myHello())
 
-//// Generators
+
+////// Generators
 function* helloWorld() {
   if (true) {
     yield "Hello, ";
@@ -208,26 +161,4 @@ const generatorHello = helloWorld();
 console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
-=======
 
-const calc = new calculator();
-console.log(calc.sum(2, 2));
-
-import { hello } from './module';
-
-hello();
-
-function* helloWorld() {
-  if (true) {
-    yield 'Hello, ';
-  }
-  if (true) {
-    yield 'World';
-  }
-};
-
-const generatorHello = helloWorld();
-console.log(generatorHello.next().value);
-console.log(generatorHello.next().value);
-console.log(generatorHello.next().value);
->>>>>>> d968431a819e44129cb1ae9bd92c5cbc56e0b95d
