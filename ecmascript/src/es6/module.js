@@ -10,8 +10,10 @@ module.exports = {
   bye,
 };
 
+/* 
 //es6 (no me anda :( )
 function hello() {
 	return 'Hello!'
 }
 export default hello
+ */

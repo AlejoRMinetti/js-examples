@@ -42,6 +42,7 @@ console.log(person.name, person.age);
 let { name, age, country } = person;
 console.log(name, age, country);
 
+///// propagacion
 let team1 = ["Oscar", "Julian", "Ricardo"];
 let team2 = ["Valeria", "Yesica", "Camila"];
 //es6 operador de propagacion
@@ -127,14 +128,14 @@ console.log(calc.sum(2, 2));
 const lib =  require('./module');
 lib.hello();
 lib.bye();
-//es6 (no me anda :( )
+// es6 (no me anda con Run Code extension :( )
 import { hello } from './module';
 hello();
 // importar con otro nombre
 import myHello from './module'
 console.log(myHello())
 
-//// Generators
+////// Generators
 function* helloWorld() {
   if (true) {
     yield "Hello, ";

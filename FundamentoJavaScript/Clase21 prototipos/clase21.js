@@ -20,3 +20,6 @@ Persona.prototype.soyAlto = function() {
 
 var jesus = new Persona('Jesus', 'Castellanos', 29, 1.80);
 var erika = new Persona('Erika', 'Luna', 33, 1.85);
+
+erika.saludar()
+jesus.soyAlto();

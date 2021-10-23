@@ -24,14 +24,9 @@ miAuto["detallesDelAuto"]();
 
 // borrar propiedad
 delete miAuto.rayones;
-
 /// metodos de objetos
-
 //returns a boolean indicating whether object has a property myProp
 object.hasOwnProperty('myProp')
-
-
-// Función constructora 
 // delete atributo o metodo
 delete miAuto["rayones"];
 
