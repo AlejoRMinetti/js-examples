@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+</head>
+<body>
+    <div id="app">
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Enter a new task...">
+      <button type="submit">Add Task</button>
+    </form>
+    <ul id="task-list"></ul>
+  </div>
+  
+  <script>
+    const taskForm = document.getElementById("task-form");
+    const taskInput = document.getElementById("task-input");
+    const taskList = document.getElementById("task-list");
+    let tasks = [];
+    
+    taskForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const newTask = taskInput.value;
+      tasks.push(newTask);
+      taskInput.value = "";
+      renderTasks();
+    });
+    
+    function renderTasks() {
+      taskList.innerHTML = "";
+      tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.innerText = task;
+        taskList.appendChild(li);
+      });
+    }
+  </script>
+  
+</body>
+</html>
