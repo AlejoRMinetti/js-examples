@@ -16,7 +16,7 @@ var miFuncion = function (a, b) {
 miFuncion(); // mandamos llamar la variable como funcion
 
 /* ============================= */
-
+// Funciones Declarativas:
 function saludarEstudiante(estudiante) {
   console.log(`Hola ${estudiante}`); // template strings (Plantillas de cadena de texto)
 }
@@ -26,6 +26,27 @@ function suma(a, b) {
   var resultado = a + b;
 }
 suma(20, 30);
+
+//// Funciones expresivas o anonimas:
+// Expresión de función:
+// Declaración
+var suma = function (a, b) {
+  return a + b;
+};
+// Invocación
+var resultado = suma(2, 2);
+
+console.log(resultado); //4
+
+// Diferencias:
+// A las funciones declarativas se les aplica hoisting, y a la expresión de función, no.
+// Ya que el hoisting solo se aplica en las palabras reservadas var y function.
+
+// Lo que quiere decir que con las funciones declarativas, podemos mandar llamar
+// la función antes de que ésta sea declarada, y con la expresión de función, no,
+// tendríamos que declararla primero, y después mandarla llamar.
+
+
 
 // usando argumentos genericos: arguments
 // JavaScript functions have a built-in object called the arguments object.
@@ -45,17 +66,16 @@ function findMax() {
 ///// usando callback
 
 function decirHolaAlUsuario(usuario) {
-  return 'Hola ' + usuario + '!';
+  return "Hola " + usuario + "!";
 }
 
 function decirAdiosAlUsuario(usuario) {
-  return 'Adiós ' + usuario + '!';
+  return "Adiós " + usuario + "!";
 }
 
 function crearSaludo(usuario, cb) {
   return cb(usuario);
 }
 
-crearSaludo('Dan', decirHolaAlUsuario); // 'Hello Dan!'
-crearSaludo('Dan', decirAdiosAlUsuario); // 'Goodbye Dan!'
-
+crearSaludo("Dan", decirHolaAlUsuario); // 'Hello Dan!'
+crearSaludo("Dan", decirAdiosAlUsuario); // 'Goodbye Dan!'

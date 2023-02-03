@@ -29,5 +29,9 @@ parseFloat("12")
 // si lo forzamos mediante conversion con estos metodos: es explicita
 
 // int to string. base=10 decimal. base = 2 binario
-number.toString(base)
+number=8
+base=2
+console.log(
+    number.toString(base)
+)
 
