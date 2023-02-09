@@ -67,3 +67,13 @@ var articulosBaratos = articulos.every(function (articulo) {
   return articulo.costo <= 700;
 });
 console.log(articulosBaratos);
+
+
+// loops
+// in vs of
+for (articulo in articulos){
+  console.log(articulo);
+}
+for (articulo of articulos){
+  console.log(articulo);
+}

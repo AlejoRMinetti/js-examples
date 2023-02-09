@@ -10,7 +10,11 @@ for (var i = 0; i < estudiantes.length; i++) {
     saludarEstudiante(estudiantes[i]);
 }
 
-for (var estudiante of estudiantes) {
+for (estudiante of estudiantes) {
+    saludarEstudiante(estudiante);
+}
+
+for (estudiante in estudiantes) {
     saludarEstudiante(estudiante);
 }
 
@@ -21,7 +25,11 @@ while (estudiantes.length > 0) {   // Aquí la tarea se hará siempre y cuando s
 
 
 // do while
+var i=1;
 do {
+    console.log(i)
+    i++;
     //code block to be executed
 }
-while (condition);
+while (i < 0);
+console.log(i)
