@@ -15,8 +15,8 @@ console.log(values.length)
 
 ////////// sintring padEnd y padStart
 const string = 'hello';
-console.log(string.padStart(7, 'hi'));
-console.log(string.padEnd(12, ' -----'))
+console.log(string.padStart(9, 'hi'));
+console.log(string.padEnd(12, ' --'))
 console.log('food'.padEnd(12, '  -----'))
 // se evita error al dejar la ,
 const obj = {
