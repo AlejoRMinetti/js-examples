@@ -1,3 +1,4 @@
+/* //previo es6 se exportaba:
 const hello = () => {
   console.log("hello!");
 };
@@ -9,13 +10,15 @@ module.exports = {
   hello,
   bye,
 };
-
+*/
 
 //es6 (no me anda :( )
-/* 
+
 function hello() {
-	return 'Hello!'
+	return console.log('Hello!');
 }
 export default hello
-*/
+
+// named export: no permite cambiarle el nombre en la importacion
+// export {hello}
 

@@ -5,8 +5,6 @@ function newFunction(name, age, country) {
   var country = country || "MX";
   console.log(name, age, country);
 }
-
-
 /////// es6 desde asginacion de los parametros
 function newFunction2(name = "oscar", age = 32, country = "MX") {
   console.log(name, age, country);
@@ -22,7 +20,6 @@ let epicPhrase = hello + " " + world;
 console.log(epicPhrase);
 let epicPhrase2 = `${hello} ${world}`;
 console.log(epicPhrase2);
-
 
 /////// multilineas
 let lorem =
@@ -91,8 +88,9 @@ const names = [
 let listOfNames = names.map(function (item) {
   console.log(item.name);
 });
-// arrow function multiples parametros
+// using arrow function
 let listOfNames2 = names.map((item) => console.log(item.name));
+// arrow function multiples parametros
 const listOfNames3 = (name, age, country) => {
   console.log(name, age, country);
 };
@@ -141,12 +139,16 @@ const lib =  require('./module');
 lib.hello();
 lib.bye();
 // es6 (no me anda con Run Code extension :( )
-import { hello } from './module';
+import hello from './module.js';
 hello();
 // importar con otro nombre
-import myHello from './module'
-console.log(myHello())
-
+import myHello from './module.js'
+myHello()
+// por usar JS vanilla (JS puro)
+// To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+// usando named export: export {hello}
+import {hello} from './module.js';
+hello();
 
 ////// Generators
 function* helloWorld() {
