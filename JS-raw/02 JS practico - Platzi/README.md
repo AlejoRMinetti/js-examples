@@ -1,2 +1,2 @@
-## Curso practico de JavaScript por Platzi
-moverse en las diferentes ramas para ver cada clase
+# curso-frontend-dev-JS-practico
+https://alejorminetti.github.io/curso-frontend-dev-JS-practico/
