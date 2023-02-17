@@ -23,6 +23,11 @@ const obj = {
   name: 'oscar',
 }
 
+// async await
+const helloAsync = async () => {
+  const hello = await helloWorld();
+  console.log(hello);
+};
 ///////////// usando promise en async await
 const helloWorld = () => {
   return new Promise((resolve, reject) => {
@@ -30,11 +35,6 @@ const helloWorld = () => {
       ? setTimeout(() => resolve('Hello World'), 3000)
       : reject(new Error('Test Error'))
   })
-};
-// async await
-const helloAsync = async () => {
-  const hello = await helloWorld();
-  console.log(hello);
 };
 helloAsync();
 // async await: de forma correcta con try catch
