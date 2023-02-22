@@ -1,0 +1,27 @@
+{
+  "name": "platzi-dom",
+  "version": "0.1.0",
+  "description": "Curso de Manipulacion del DOM",
+  "author": "@jonalvarezz",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "workshop-fetch",
+    "workshop-lazy-loading"
+  ],
+  "scripts": {
+    "start:w1": "yarn --cwd workshop-fetch start",
+    "start:w2": "yarn --cwd workshop-lazy-loading start",
+    "test": "yarn workspaces run test",
+    "build": "yarn workspaces run build",
+    "prepare": "husky install",
+    "pre-commit": "yarn pretty-quick --staged"
+  },
+  "devDependencies": {
+    "husky": "7",
+    "prettier": "2",
+    "pretty-quick": "3",
+    "snowpack": "3",
+    "tailwindcss": "2"
+  }
+}
