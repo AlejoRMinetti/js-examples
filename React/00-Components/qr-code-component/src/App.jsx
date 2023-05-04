@@ -8,7 +8,7 @@ export default function App() {
   return (
     <QrCode
       title="Improve your front-end skills by building projects"
-      descrip= {des}
+      descrip= {desc}
       url="https://github.com/AlejoRMinetti"
     />
   );
