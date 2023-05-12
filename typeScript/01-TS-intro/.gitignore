@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,node
+# Created by https://www.toptal.com/developers/gitignore/api/linux,windows,macos,node
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,windows,macos,node
 
 ### Linux ###
 *~
@@ -45,6 +45,10 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
 
 ### Node ###
 # Logs
@@ -138,7 +142,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
 
 # Gatsby files
 .cache/
@@ -212,4 +216,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,node
+# End of https://www.toptal.com/developers/gitignore/api/linux,windows,macos,node
