@@ -1,9 +1,0 @@
-[submodule "React/01-intro-react-todolist"]
-	path = React/01-intro-react-todolist
-	url = https://github.com/AlejoRMinetti/01-intro-react-todolist.git
-[submodule "React/ricky-morty-api"]
-	path = React/ricky-morty-api
-	url = https://github.com/AlejoRMinetti/ricky-morty-api.git
-[submodule "React/platzi-react-badges"]
-	path = React/platzi-react-badges
-	url = https://github.com/AlejoRMinetti/platzi-react-badges.git
