@@ -11,7 +11,9 @@ const { exec, spawn } = require('child_process');
 
 let proceso = spawn('ls', ['-la']);
 
+console.log('PID:');
 console.log(proceso.pid);
+console.log('Connected?');
 console.log(proceso.connected);
 
 proceso.stdout.on('data', function (dato) {

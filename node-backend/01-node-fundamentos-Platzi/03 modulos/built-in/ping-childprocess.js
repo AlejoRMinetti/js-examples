@@ -16,4 +16,5 @@ const ping = (address) => {
 
 ping(ip)
   .then((result) => console.log(result))
-  .catch((error) => console.error("Ocurrió un error: ", error.message));
+  .catch((error) => console.error("Ocurrió un error: ",
+   error.message));
