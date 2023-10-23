@@ -3,6 +3,8 @@ import type { MouseEventHandler } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import { useLocalStorage } from 'usehooks-ts'
+
 // Ejemplo utilizando una librería sin tipos.
 // Realmente no hace falta su uso.
 import { random } from "lodash";
@@ -22,12 +24,17 @@ const myRandom = () => random(1, 122);
 
 const Home: NextPage = () => {
   const [images, setImages] = useState<Array<IFoxImageItem>>([]);
+  const [isDarkTheme, setDarkTheme] = useLocalStorage('darkTheme', true)
 
   const addNewFox: MouseEventHandler<HTMLButtonElement> = () => {
     const id = generateId();
     const url = `https://randomfox.ca/images/${myRandom()}.jpg`;
     setImages([...images, { id, url }]);
   };
+
+  const toggleTheme = () => {
+    setDarkTheme((prevValue: boolean) => !prevValue)
+  }
 
   return (
     <div>
@@ -38,6 +45,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <button onClick={toggleTheme}>
+          {`The current theme is ${isDarkTheme ? `dark` : `light`}`}
+        </button>
         <div className="m-4">
           <button
             onClick={addNewFox}
