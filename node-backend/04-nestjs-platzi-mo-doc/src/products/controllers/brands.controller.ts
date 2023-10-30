@@ -9,16 +9,16 @@ import {
   Delete,
   NotFoundException,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
 
-import { ParseIntPipe } from '../common/parse-int.pipe';
-import { CreateBrandDto, UpdateBrandDto } from '../dtos/brands.dtos';
+import { ParseIntPipe } from '../../common/parse-int.pipe';
+import { CreateBrandDto, UpdateBrandDto } from '../dtos/brands.dto';
 import { BrandsService } from '../services/brands.service';
+import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Brands')
 @Controller('brands')
 export class BrandsController {
-  constructor(private brandService: BrandsService){}
+  constructor(private brandService: BrandsService) {}
   @Get()
   getAll(
     @Query('limit') limit = 100,
