@@ -12,19 +12,16 @@ import {
   NotFoundException,
   // ParseIntPipe,
 } from '@nestjs/common';
-import { ApiTags, ApiOperation } from '@nestjs/swagger';
 
 import { ParseIntPipe } from '../common/parse-int.pipe';
 import { CreateProductDto, UpdateProductDto } from '../dtos/products.dtos';
 import { ProductsService } from '../services/products.service';
 
-@ApiTags('Products')
 @Controller('products')
 export class ProductsController {
   constructor(private productService: ProductsService) {}
 
   @Get()
-  @ApiOperation({ summary: 'Get list of Products' })
   getProducts(
     @Query('limit') limit = 100,
     @Query('offset') offset = 20,

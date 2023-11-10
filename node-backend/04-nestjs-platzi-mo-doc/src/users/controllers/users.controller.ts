@@ -22,8 +22,7 @@ export class UsersController {
   @Get()
   getAll(
     @Query('limit') limit = 100,
-    @Query('offset') offset = 20,
-    @Query('brand') brand: string,
+    @Query('offset') offset = 20
   ) {
     return this.usersService.findAll();
   }

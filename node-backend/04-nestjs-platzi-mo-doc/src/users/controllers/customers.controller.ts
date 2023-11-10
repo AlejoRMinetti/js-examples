@@ -23,7 +23,6 @@ export class CustomersController {
   getAll(
     @Query('limit') limit = 100,
     @Query('offset') offset = 20,
-    @Query('brand') brand: string,
   ) {
     return this.customerService.findAll();
   }
