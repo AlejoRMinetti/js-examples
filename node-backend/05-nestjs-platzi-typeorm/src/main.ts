@@ -22,6 +22,6 @@ async function bootstrap() {
   // ver autodoc en: base_url/docs/
 
   app.enableCors(); // para poder ser consultada desde afuera (cualquier origen)
-  await app.listen(process.env.PORT || 3008, "0.0.0.0");
+  await app.listen(process.env.PORT || 3008);
 }
 bootstrap();

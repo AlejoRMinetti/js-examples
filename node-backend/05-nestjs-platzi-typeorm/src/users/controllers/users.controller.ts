@@ -57,4 +57,9 @@ export class UsersController {
   delete(@Param('id', ParseIntPipe) id: number) {
     return this.usersService.delete(id);
   }
+
+  @Get(':id/tasks') // 👈 new endpoint, TODO: getTasks(id) for each user
+  getTasks() {
+    return this.usersService.getTasks();
+  }
 }
