@@ -1,10 +1,13 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { ConfigType } from '@nestjs/config';
+import { Client } from 'pg';
+
 import config from './config';
 
 @Injectable()
 export class AppService {
   constructor(
+    @Inject('PG') private clientPg: Client, // 👈 inject PG
     @Inject('TASKS') private tasks: any[],
     @Inject(config.KEY) private configService: ConfigType<typeof config>,
   ) {}
@@ -15,5 +18,16 @@ export class AppService {
     const dbPort = this.configService.database.port;
     console.log(this.tasks);
     return `Hello World apiKey: ${apiKey}, dbName: ${dbName}, dbPort ${dbPort}:`;
+  }
+
+  getTasks() { // 👈 new method
+    return new Promise((resolve, reject) => {
+      this.clientPg.query('SELECT * FROM tasks', (err, res) => {
+        if (err) {
+          reject(err);
+        }
+        resolve(res.rows);
+      });
+    });
   }
 }
