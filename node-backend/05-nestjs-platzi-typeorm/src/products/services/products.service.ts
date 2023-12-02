@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm'; // 👈 import
 import { Repository } from 'typeorm'; // 👈 import
-import { NotFoundException } from '@nestjs/common/exceptions';
+import {
+  ConflictException,
+  NotFoundException,
+} from '@nestjs/common/exceptions';
 
 import { Product } from '../entities/product.entity';
 import { CreateProductDto, UpdateProductDto } from '../dtos/products.dto';
@@ -13,46 +16,45 @@ export class ProductsService {
   ) {}
 
   findAll() {
-    return this.productRepo.find();  // 👈 use repo
+    return this.productRepo.find(); // 👈 use repo
   }
 
   findOne(id: number) {
-    const product = this.productRepo.findOne(id);  // 👈 use repo
+    const product = this.productRepo.findOne(id); // 👈 use repo
     if (!product) {
       throw new NotFoundException(`Product #${id} not found`);
     }
     return product;
   }
 
-  // create(payload: CreateProductDto) {
-  //   const newProduct = {
-  //     id: this.counter,
-  //     ...payload,
-  //   };
-  //   this.counter++;
-  //   this.products.push(newProduct);
-  //   return {
-  //     message: 'Product created',
-  //     newProduct,
-  //   };
-  // }
+  async create(data: CreateProductDto) {
+    // * No es escalable
+    // const newProduct = new Product();
+    // newProduct.name = data.name;
+    // newProduct.description = data.description;
+    // newProduct.price = data.price;
+    // newProduct.stock = data.stock;
+    // newProduct.image = data.image;
 
-  // update(id: number, changes: UpdateProductDto) {
-  //   const product = this.findOne(id);
-  //   if (product) {
-  //     const index = this.products.findIndex((item) => item.id == id);
-  //     this.products[index] = {
-  //       ...product,
-  //       ...changes,
-  //     };
-  //     return this.products[index];
-  //   }
-  //   return null;
-  // }
+    const newProduct = this.productRepo.create(data);
 
-  // delete(id) {
-  //   const index = this.products.findIndex((item) => item.id == id);
-  //   this.products.splice(index, 1);
-  //   return { message: true };
-  // }
+    return await this.productRepo.save(newProduct).catch((error) => {
+      throw new ConflictException(error.detail);
+    });
+  }
+
+  // Actualizar producto
+  async update(id: number, changes: UpdateProductDto) {
+    // buscamos el producto
+    const product = await this.productRepo.findOne(id);
+    // actualizamos el producto
+    this.productRepo.merge(product, changes);
+    // guardamos los datos
+    return this.productRepo.save(product);
+  }
+
+  // Borrar producto
+  remove(id: number) {
+    return this.productRepo.delete(id);
+  }
 }

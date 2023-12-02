@@ -47,11 +47,11 @@ export class ProductsController {
     }
     return product;
   }
-/*
   @Post()
-  cretate(@Body() payload: CreateProductDto) {
+  create(@Body() payload: CreateProductDto) {
     return this.productService.create(payload);
   }
+
   @Put(':id')
   update(
     @Param('id', ParseIntPipe) id: number,
@@ -62,7 +62,6 @@ export class ProductsController {
 
   @Delete(':id')
   delete(@Param('id', ParseIntPipe) id: number) {
-    return this.productService.delete(id);
+    return this.productService.remove(id);
   }
-  */
 }
