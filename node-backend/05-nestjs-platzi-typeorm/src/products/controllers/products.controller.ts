@@ -26,7 +26,6 @@ export class ProductsController {
   getProducts(
     @Query('limit') limit = 100,
     @Query('offset') offset = 20,
-    @Query('brand') brand: string,
   ) {
     return this.productService.findAll();
   }
@@ -48,7 +47,7 @@ export class ProductsController {
     }
     return product;
   }
-
+/*
   @Post()
   cretate(@Body() payload: CreateProductDto) {
     return this.productService.create(payload);
@@ -65,4 +64,5 @@ export class ProductsController {
   delete(@Param('id', ParseIntPipe) id: number) {
     return this.productService.delete(id);
   }
+  */
 }

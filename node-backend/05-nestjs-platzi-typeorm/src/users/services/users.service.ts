@@ -12,62 +12,53 @@ export class UsersService {
     private productsService: ProductsService,
     @Inject('PG') private clientPg: Client, // 👈 inject PG
     ) {}
-  private counter = 1;
-  private users: User[] = [
-    {
-      id: 0,
-      username: 'alejorminetti',
-      password: '1234',
-      email: 'alejorm@gmail.com',
-    },
-  ];
 
-  findAll() {
-    return this.users;
-  }
+  // findAll() {
+  //   return this.users;
+  // }
 
-  findOne(id: number) {
-    const user = this.users.find((item) => item.id == id);
-    return user;
-  }
+  // findOne(id: number) {
+  //   const user = this.users.find((item) => item.id == id);
+  //   return user;
+  // }
 
-  create(payload: CreateUserDto) {
-    const newUser = {
-      id: this.counter,
-      ...payload,
-    };
-    this.counter++;
-    this.users.push(newUser);
-    return newUser;
-  }
+  // create(payload: CreateUserDto) {
+  //   const newUser = {
+  //     id: this.counter,
+  //     ...payload,
+  //   };
+  //   this.counter++;
+  //   this.users.push(newUser);
+  //   return newUser;
+  // }
 
-  update(id: number, changes: UpdateUserDto) {
-    const user = this.findOne(id);
-    if (user) {
-      const index = this.users.findIndex((item) => item.id == id);
-      this.users[index] = {
-        ...user,
-        ...changes,
-      };
-      return this.users[index];
-    }
-    return null;
-  }
+  // update(id: number, changes: UpdateUserDto) {
+  //   const user = this.findOne(id);
+  //   if (user) {
+  //     const index = this.users.findIndex((item) => item.id == id);
+  //     this.users[index] = {
+  //       ...user,
+  //       ...changes,
+  //     };
+  //     return this.users[index];
+  //   }
+  //   return null;
+  // }
 
-  delete(id: number) {
-    const index = this.users.findIndex((item) => item.id == id);
-    this.users.splice(index, 1);
-    return { message: true };
-  }
+  // delete(id: number) {
+  //   const index = this.users.findIndex((item) => item.id == id);
+  //   this.users.splice(index, 1);
+  //   return { message: true };
+  // }
 
-  getOrderByUser(id: number): Order {
-    const user = this.findOne(id);
-    return {
-      date: new Date(),
-      user,
-      products: this.productsService.findAll(),
-    };
-  }
+  // async getOrderByUser(id: number) {
+  //   const user = this.findOne(id);
+  //   return {
+  //     date: new Date(),
+  //     user,
+  //     products: await this.productsService.findAll(),
+  //   };
+  // }
 
   getTasks() {
     return new Promise((resolve, reject) => {
