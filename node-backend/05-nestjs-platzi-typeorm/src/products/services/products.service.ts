@@ -19,8 +19,8 @@ export class ProductsService {
     return this.productRepo.find(); // 👈 use repo
   }
 
-  findOne(id: number) {
-    const product = this.productRepo.findOne(id); // 👈 use repo
+  async findOne(id: number) {
+    const product = await this.productRepo.findOne(id); // 👈 use repo
     if (!product) {
       throw new NotFoundException(`Product #${id} not found`);
     }

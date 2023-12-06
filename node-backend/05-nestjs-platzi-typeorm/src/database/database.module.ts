@@ -31,7 +31,7 @@ const API_KEY_PROD = '123453421654';
           username: user,
           password,
           database: dbName,
-          synchronize: true, // 👈 new attr
+          synchronize: false, //! Solo usar en development o testing, NO EN PRODUCCIÓN
           autoLoadEntities: true, // 👈 new attr
         };
       },

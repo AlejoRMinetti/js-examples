@@ -29,7 +29,8 @@
 ### Topics
 
 - Connection to postgres DB
-- Using typeORM
+- Using typeORM: vinculacion directa mediante objetos a la DB
+- Migrations: proteje la DB mediante una especie de control de versiones
 
 ## Installation
 
