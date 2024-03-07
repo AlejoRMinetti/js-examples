@@ -15,15 +15,11 @@ function App() {
       }, 3000);
     })
       .then((message) => {
-        toast.success(message, {
-          id: toastId
-        });
+        toast.success(message);
         toast.done(toastId);
       })
       .catch((error) => {
-        toast.error(error, {
-          id: toastId
-        });
+        toast.error(error);
         toast.done(toastId);
       });
   };
@@ -34,7 +30,7 @@ function App() {
       <ToastContainer
       stacked 
       position="bottom-right"
-      autoClose={5000}
+      autoClose={10000}
       hideProgressBar={false}
       newestOnTop={false}
       rtl={false}
